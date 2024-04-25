@@ -12,7 +12,7 @@ public class Theatre {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int theatreId;
+    private int id;
 
     @JoinColumn(name = "city_id")
     @ManyToOne
