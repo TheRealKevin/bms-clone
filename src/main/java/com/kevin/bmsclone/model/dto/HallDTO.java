@@ -12,5 +12,4 @@ public class HallDTO {
 
     private List<ShowDTO> showList;
 
-    private Theatre theatre;
 }

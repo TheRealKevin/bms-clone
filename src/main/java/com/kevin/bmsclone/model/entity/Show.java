@@ -9,26 +9,26 @@ import java.sql.Time;
 import java.sql.Date;
 
 @Entity
-@Table(name = "SHOW")
+@Table(name = "SHOWS")
 @Data
 public class Show {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int showId;
 
-    @ManyToOne
-    @JoinColumn(name = "movie_id")
-    private Movie movie;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "show_id")
+//    private Movie movie;
 
+    @Column(name = "show_date")
     private Date showDate;
 
+    @Column(name = "show_time")
     private Time showTime;
 
-    @ManyToOne
-    @JoinColumn(name = "hall_id")
-    private Hall hall;
-
-    @OneToMany(mappedBy = "show")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "show_id")
     private List<ShowSeat> showSeatList;
 }

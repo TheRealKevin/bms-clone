@@ -1,11 +1,15 @@
 package com.kevin.bmsclone.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "THEATRE")
 public class Theatre {
@@ -14,10 +18,10 @@ public class Theatre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @JoinColumn(name = "city_id")
-    @ManyToOne
-    private City city;
+    @Column(name = "theatre_name")
+    private String name;
 
-    @OneToMany(mappedBy = "theatre")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "theatre_id")
     private List<Hall> hallsList;
 }

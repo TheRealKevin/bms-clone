@@ -1,5 +1,6 @@
 package com.kevin.bmsclone.service.impl;
 
+import com.kevin.bmsclone.mapper.EntityToDtoMapper;
 import com.kevin.bmsclone.model.dto.CityDTO;
 import com.kevin.bmsclone.model.entity.City;
 import com.kevin.bmsclone.repository.CityRepository;
@@ -17,15 +18,15 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private CityRepository cityRepository;
 
+    @Autowired
+    private EntityToDtoMapper mapper;
+
     @Override
     public List<CityDTO> fetchAllCities() {
         List<City> cityList = cityRepository.findAll();
 
-
-
         return cityList.stream().map(city -> {
-            CityDTO cityDTO = new CityDTO();
-            BeanUtils.copyProperties(city, cityDTO);
+            CityDTO cityDTO = mapper.convertToDto(city);
             return cityDTO;
         }).collect(Collectors.toList());
     }

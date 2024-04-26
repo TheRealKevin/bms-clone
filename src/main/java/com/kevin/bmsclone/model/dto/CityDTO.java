@@ -12,5 +12,5 @@ public class CityDTO {
 
     private String name;
 
-    private List<Theatre> theatreList;
+    private List<TheatreDTO> theatreList;
 }

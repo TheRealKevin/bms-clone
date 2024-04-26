@@ -9,7 +9,5 @@ public class TheatreDTO {
 
     private int theatreId;
 
-    private CityDTO city;
-
-    List<HallDTO> hallsList;
+    private List<HallDTO> hallsList;
 }

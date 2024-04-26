@@ -19,9 +19,10 @@ public class MovieDTO {
 
     private Genre genre;
 
-    private Date releaseData;
+    private Date releaseDate;
 
     private Language language;
 
-    private List<Show> showList;
+    private List<ShowDTO> showList;
+
 }

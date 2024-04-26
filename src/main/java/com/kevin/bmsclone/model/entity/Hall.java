@@ -12,13 +12,13 @@ public class Hall {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int hallId;
 
-    @OneToMany(mappedBy = "hall")
+    @Column(name = "seating_capacity")
+    private int totalSeats;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "hall_id")
     private List<Show> showList;
-
-    @JoinColumn(name = "theatre_id")
-    @ManyToOne
-    private Theatre theatre;
-
 }

@@ -1,10 +1,12 @@
 package com.kevin.bmsclone.service.impl;
 
 import com.kevin.bmsclone.model.dto.HallDTO;
+import com.kevin.bmsclone.model.dto.MovieDTO;
 import com.kevin.bmsclone.model.dto.ShowDTO;
 import com.kevin.bmsclone.model.dto.TheatreDTO;
 import com.kevin.bmsclone.model.entity.Show;
 import com.kevin.bmsclone.model.entity.Theatre;
+import com.kevin.bmsclone.repository.MovieRepository;
 import com.kevin.bmsclone.repository.ShowRepository;
 import com.kevin.bmsclone.repository.TheatreRepository;
 import com.kevin.bmsclone.service.ShowService;

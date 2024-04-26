@@ -15,15 +15,9 @@ public class ShowDTO {
 
     private int showId;
 
-    private MovieDTO movie;
-
     private Date showDate;
 
     private Time showTime;
-
-    private TheatreDTO playedAt;
-
-    private HallDTO hall;
 
     private List<ShowSeatDTO> showSeatList;
 }
