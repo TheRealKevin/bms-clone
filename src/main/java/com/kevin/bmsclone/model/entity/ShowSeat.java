@@ -26,7 +26,11 @@ public class ShowSeat {
 
     private double price;
 
-//    @JoinColumn(name = "show_id")
-//    @ManyToOne
-//    private Show show;
+    @JoinColumn(name = "show_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Show show;
+
+    @ManyToOne
+    @JoinColumn(name = "booking_id")
+    private Booking booking;
 }

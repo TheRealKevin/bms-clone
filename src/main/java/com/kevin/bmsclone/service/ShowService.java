@@ -1,12 +1,15 @@
 package com.kevin.bmsclone.service;
 
 import com.kevin.bmsclone.model.dto.ShowDTO;
-import com.kevin.bmsclone.model.entity.City;
+import com.kevin.bmsclone.model.request.CreateShowRequest;
+import com.kevin.bmsclone.model.response.ShowResponse;
 
 import java.util.List;
-import java.util.Set;
 
 public interface ShowService {
 
-    Set<ShowDTO> fetchAllShows(int cityId);
+    List<ShowDTO> fetchAllShows(int cityId);
+
+    ShowResponse createShow(CreateShowRequest createShowRequest);
+
 }

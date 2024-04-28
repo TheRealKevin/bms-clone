@@ -33,7 +33,9 @@ public class Movie {
     @Enumerated(value = EnumType.STRING)
     private Language language;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "movie_id")
-    private List<Show> showList;
+    // TODO : Reconsider the design (Does the movie table need to know about the SHOWS playing or can we process that thru application)
+    // TODO : IMO NO
+//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JoinColumn(name = "movie_id")
+//    private List<Show> showList;
 }

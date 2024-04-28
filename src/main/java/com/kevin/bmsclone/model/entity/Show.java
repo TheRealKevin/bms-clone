@@ -18,9 +18,9 @@ public class Show {
     @Column(name = "id")
     private int showId;
 
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "show_id")
-//    private Movie movie;
+    // TODO : Does SHOWS need to know about MOVIE it's playing or can we process that thru application
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Movie movie;
 
     @Column(name = "show_date")
     private Date showDate;
@@ -28,7 +28,18 @@ public class Show {
     @Column(name = "show_time")
     private Time showTime;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "show_id")
-    private List<ShowSeat> showSeatList;
+    // TODO : Does SHOWS need to know about the HALL it's playing in? IMO YESS
+    @ManyToOne
+    @JoinColumn(name = "hall_id")
+    private Hall hall;
+
+    // TODO : Does SHOWS need to know about the SHOW_SEAT it has or or can we process that thru application?
+//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<ShowSeat> showSeatList;
+
+
+    // TODO : Does SHOWS need to know about the BOOKING it has or or can we process that thru application?
+//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JoinColumn(name = "show_id")
+//    private List<Booking> bookingList;
 }

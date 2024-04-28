@@ -1,6 +1,5 @@
 package com.kevin.bmsclone.model.dto;
 
-import com.kevin.bmsclone.model.entity.Theatre;
 import lombok.Data;
 
 import java.util.List;
@@ -10,6 +9,12 @@ public class HallDTO {
 
     private int hallId;
 
-    private List<ShowDTO> showList;
+    private int totalRows;
+
+    private int totalSeats;
+
+    private int seatingCapacity;
+
+//    private List<ShowDTO> showList;
 
 }

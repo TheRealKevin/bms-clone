@@ -16,4 +16,8 @@ public class ShowSeatDTO {
 
     private double price;
 
+    private ShowDTO show;
+
+    private BookingDTO booking;
+
 }

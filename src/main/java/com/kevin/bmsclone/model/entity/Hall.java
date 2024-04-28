@@ -15,10 +15,16 @@ public class Hall {
     @Column(name = "id")
     private int hallId;
 
-    @Column(name = "seating_capacity")
+    @Column(name = "total_rows")
+    private int totalRows;
+
+    @Column(name = "total_seats")
     private int totalSeats;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "hall_id")
-    private List<Show> showList;
+    @Column(name = "seating_capacity")
+    private int seatingCapacity;
+
+    // TODO : Does HALL need to know about the SHOW it's playing in from DB?
+//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<Show> showList;
 }
